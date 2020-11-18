@@ -1,0 +1,39 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model List<SalesMovement>
+@{
+    ViewBag.Title = "CustomerSales";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Currnet Name: @ViewBag.crrnt</li>
+</ol>
+<table class="table table-bordered">
+    <tr>
+        <th>Sales ID</th>
+        <th>Product</th>
+        <th>Current</th>
+        <th>Price</th>
+        <th>Piece</th>
+        <th>TotalAmount</th>
+        <th>Date</th>
+        <th>Print</th>
+    </tr>
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.SalesID</td>
+            <td>@x.Product.ProductName</td>
+            <td>@x.Current.CurrentName @x.Current.CurrentSurname</td>
+            <td>@x.Price</td>
+            <td>@x.Piece</td>
+            <td>@x.TotalAmount</td>
+            <td>@x.Date</td>
+            <td><a href="#" class="btn btn-warning">Print</a></td>
+        </tr>
+
+    }
+
+</table>
+

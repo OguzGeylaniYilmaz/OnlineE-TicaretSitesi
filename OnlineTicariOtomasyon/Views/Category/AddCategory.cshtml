@@ -1,0 +1,19 @@
+﻿@model OnlineTicariOtomasyon.Models.Classes.Category
+@{
+    ViewBag.Title = "AddCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x=>x.CategoryName)
+    @Html.TextBoxFor(x=>x.CategoryName, new {@class="form-control" })
+    <br />
+    <button class="btn btn-info" id="Btn1">Save</button>
+    <script>
+        $('#Btn1').click(function () {
+            alert("Category successfully added")
+        });
+    </script>
+</form>
+

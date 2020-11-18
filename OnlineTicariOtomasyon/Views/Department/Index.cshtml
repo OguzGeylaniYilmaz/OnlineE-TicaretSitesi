@@ -1,0 +1,38 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model List<Department>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<table class="table table-bordered" style="margin-top:20px">
+
+    <tr>
+        <th>ID</th>
+        <th>Department Name</th>
+        <th>Delete</th>
+        <th>Update</th>
+        <th>Details</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+    <tr>
+        <td>
+            @x.DepartmentID
+        </td>
+        <td>@x.DepartmentName</td>
+
+        <td><a class="btn btn-danger" href="/Department/DeleteDepartment/@x.DepartmentID">Delete</a></td>
+        <td><a class="btn btn-warning" href="/Department/GetDepartment/@x.DepartmentID">Update</a></td>
+        <td><a class="btn btn-primary" href="/Department/DepartmentDetail/@x.DepartmentID">Details</a></td>
+
+
+    </tr>
+
+    }
+
+</table>
+<br />
+<a href="/Department/AddDepartment" class="btn btn-info">Add Department</a>
+

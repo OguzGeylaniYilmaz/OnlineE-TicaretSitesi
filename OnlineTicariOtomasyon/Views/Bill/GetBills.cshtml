@@ -1,0 +1,36 @@
+﻿@model OnlineTicariOtomasyon.Models.Classes.Bill
+@{
+    ViewBag.Title = "GetBills";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateBill", "Bill", FormMethod.Post))
+{
+    <br />
+    @Html.HiddenFor(x => x.BillID)
+    @Html.LabelFor(x => x.BillSerialNo)
+    @Html.TextBoxFor(x => x.BillSerialNo, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BillOrderNo)
+    @Html.TextBoxFor(x => x.BillOrderNo, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TaxAdministration)
+    @Html.TextBoxFor(x => x.TaxAdministration, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Date)
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Hour)
+    @Html.TextBoxFor(x => x.Hour, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.DeliveryPerson)
+    @Html.TextBoxFor(x => x.DeliveryPerson, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Receiver)
+    @Html.TextBoxFor(x => x.Receiver, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Update</button>
+}
+
+
+

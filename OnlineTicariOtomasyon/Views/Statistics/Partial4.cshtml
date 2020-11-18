@@ -1,0 +1,56 @@
+﻿@model IEnumerable<OnlineTicariOtomasyon.Models.Classes.ClassGroup3>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Product Brand Table</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th style="width: 10px">#</th>
+                    <th>Brand</th>
+                    <th>Progress</th>
+                    <th style="width: 40px">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int orderNo = 0; }
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td>@{orderNo++;} @orderNo</td>
+                        <td>@x.Brand</td>
+                        <td>
+                            @if (x.Number == 1)
+                            {
+                                <div class="progress progress-xs">
+                                    <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                </div>
+                            }
+                            @if (x.Number == 2)
+                            {
+                                <div class="progress progress-xs">
+                                    <div class="progress-bar bg-yellow" style="width: 70%"></div>
+                                </div>
+                            }
+                        </td>
+                        <td>
+                            @if (x.Number == 1)
+                            {
+                                <span class="badge bg-blue">@x.Number</span>
+                            }
+                            @if (x.Number == 2)
+                            {
+                                <span class="badge bg-yellow">@x.Number</span>
+                            }
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

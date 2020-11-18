@@ -1,0 +1,32 @@
+﻿@model OnlineTicariOtomasyon.Models.Classes.SalesMovement
+@{
+    ViewBag.Title = "GetSales";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+@using (Html.BeginForm("UpdateSales", "Sales", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.SalesID)
+    @Html.LabelFor(x=>x.Product)
+    @Html.DropDownListFor(x => x.ProductId, (List<SelectListItem>)ViewBag.vle, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x=>x.Current)
+    @Html.DropDownListFor(x => x.CurrentId, (List<SelectListItem>)ViewBag.vle2, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x=>x.Stuff)
+    @Html.DropDownListFor(x => x.StuffId, (List<SelectListItem>)ViewBag.vle3, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Piece)
+    @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Price)
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TotalAmount)
+    @Html.TextBoxFor(x => x.TotalAmount, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Date)
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+}
+<br />
+<a class="btn btn-success" href="/Sales/NewSale/">Save</a>

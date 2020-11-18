@@ -1,0 +1,36 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model List<SalesMovement>
+@{
+    ViewBag.Title = "SalesDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Sales Detail</h2>
+<br />
+<table id="tbl1" class="table table-condensed">
+    <tr>
+        <th>Sales ID</th>
+        <th>Product</th>
+        <th>Current</th>
+        <th>Stuff</th>
+        <th>Price</th>
+        <th>Piece</th>
+        <th>Total Amount</th>
+        <th>Date</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.SalesID</td>
+            <td>@x.Product.ProductName</td>
+            <td>@x.Current.CurrentName @x.Current.CurrentSurname</td>
+            <td>@x.Stuff.StaffName @x.Stuff.StuffSurname</td>
+            <td>@x.Price</td>
+            <td>@x.Piece</td>
+            <td>@x.TotalAmount</td>
+            <td>@x.Date</td>
+        </tr>
+    }
+</table>
+<button class="btn btn-danger">Print</button>
+

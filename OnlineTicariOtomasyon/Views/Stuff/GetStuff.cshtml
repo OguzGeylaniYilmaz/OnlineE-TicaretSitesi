@@ -1,0 +1,29 @@
+﻿@model OnlineTicariOtomasyon.Models.Classes.Stuff
+@{
+    ViewBag.Title = "GetStuff";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+@using (Html.BeginForm("UpdateStuff", "Stuff", FormMethod.Post,new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.StaffID)
+        @Html.LabelFor(x => x.StaffName)
+        @Html.TextBoxFor(x => x.StaffName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.StuffSurname)
+        @Html.TextBoxFor(x => x.StuffSurname, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.StuffImage)
+        @*@Html.TextBoxFor(x => x.StuffImage, new { @class = "form-control" })*@
+        <input  type="file" name="StuffImage"/>
+        <br />
+        @Html.LabelFor(x => x.Department)
+        @Html.DropDownListFor(x=>x.DepartmentId,(List<SelectListItem>)ViewBag.getStuff,new {@class ="form-control" })
+        <br />
+        <button class="btn btn-outline-secondary">Update</button>
+    </div>
+}
+
+
+

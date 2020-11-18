@@ -1,0 +1,37 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model List<Current>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Current ID</th>
+        <th>Product</th>
+        <th>Stuff</th>
+        <th>Price</th>
+        <th>Piece</th>
+        <th>Total Amount</th>
+        <th>Date</th>
+        <th>Details</th>
+    </tr>
+    @foreach(var x in Model)
+    {
+    <tr>
+        <td>@x.CurrentID</td>
+        <td>@x.CurrentName</td>
+        <td>@x.CurrentSurname</td>
+        <td>@x.CurrentCity</td>
+        <td>@x.CurrentEmail</td>
+        <td><a href="/Current/DeleteCurrent/@x.CurrentID" class="btn btn-danger">Delete</a></td>
+        <td><a href="/Current/GetCurrent/@x.CurrentID" class="btn btn-success">Update</a></td>
+        <td><a href="/Current/CustomerSales/@x.CurrentID" class="btn btn-info">Sales History</a></td>
+    </tr>
+    }
+</table>
+<br />
+<a href="/Current/NewCurrent/" class="btn btn-info">Add New Current</a>
+
+
+

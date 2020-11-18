@@ -1,0 +1,46 @@
+﻿@using OnlineTicariOtomasyon.Models.Classes
+@model List<Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("Index", "Product", FormMethod.Get))
+{
+    <p>
+        Product Name : @Html.TextBox("p")
+        <input type="submit" value="Search" />
+    </p>
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Product</th>
+        <th>Brand</th>
+        <th>Stock</th>
+        <th>Purchase Price</th>
+        <th>Sale Price</th>
+        <th>Category</th>
+        <th>Delete</th>
+        <th>Update</th>
+        <th>Sale</th>
+        
+    </tr>
+    @foreach (var x in Model)
+    {
+    <tr>
+        <td>@x.ProductName</td>
+        <td>@x.Brand</td>
+        <td>@x.Stock</td>
+        <td>@x.PurchasePrice </td>
+        <td>@x.SalePrice</td>
+        <td>@x.Category.CategoryName</td>
+        <td> <a href="/Product/DeleteProduct/@x.ProductID" class="btn btn-danger">Delete</a></td>
+        <td><a href="/Product/GetProduct/@x.ProductID" class="btn btn-success">Update</a></td>
+        <td><a href="/Product/SaleProduct/@x.ProductID" class="btn btn-primary">Sales</a></td>
+    </tr>
+
+        }
+</table>    
+<a class="btn btn-outline-primary" href="/Product/NewProduct/">New Product</a>

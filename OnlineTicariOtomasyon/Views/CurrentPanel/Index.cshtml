@@ -1,0 +1,28 @@
+﻿@model OnlineTicariOtomasyon.Models.Classes.Current
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CurrentLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("Index2", "CurrentPanel", FormMethod.Post))
+{
+<table class="table table-bordered">
+    <tr>
+        <td><label>Mail Adresi : @HttpContext.Current.User.Identity.Name </label></td>
+    </tr>
+    <tr>
+        <td>@Html.TextBoxFor(x => x.CurrentName, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td>@Html.TextBoxFor(x => x.CurrentSurname, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td>@Html.TextBoxFor(x => x.CurrentCity, new { @class = "form-control" })</td>
+    </tr>
+    <tr>
+        <td>@Html.TextBoxFor(x => x.CurrentPassword, new { @class = "form-control" })</td>
+    </tr>
+</table>
+    <button class="btn btn-outline-primary">Update Infos</button>
+}

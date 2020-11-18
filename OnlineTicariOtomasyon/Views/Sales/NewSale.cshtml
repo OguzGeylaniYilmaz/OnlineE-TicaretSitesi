@@ -1,0 +1,32 @@
+﻿@model OnlineTicariOtomasyon.Models.Classes.SalesMovement
+@{
+    ViewBag.Title = "NewSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2 style="color:darkslategray">New Sale Page</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.Product)
+    @Html.DropDownListFor(x => x.ProductId, (List<SelectListItem>)ViewBag.vle, new { @class = "form-control" })
+    <br />
+    @Html.Label("Current")
+    @Html.DropDownListFor(x => x.CurrentId, (List<SelectListItem>)ViewBag.vle2, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Stuff)
+    @Html.DropDownListFor(x => x.StuffId, (List<SelectListItem>)ViewBag.vle3, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Piece)
+    @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Price)
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TotalAmount)
+    @Html.TextBoxFor(x => x.TotalAmount, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">New Sale</button>
+
+</form>
+
+
